@@ -1,0 +1,8 @@
+{
+  "name": "Markspen Engineering Central Monitor",
+  "description": "Centralized engineering operations monitor for managing jobs, technicians, visits, spare parts, expenses, and job closures with Excel workbook persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

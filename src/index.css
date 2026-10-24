@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   THEME STYLES: Light, Dark, and Colorful Modes
+   Stored and synced via settings.json
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DARK MODE
+   -------------------------------------------------------------------------- */
+[data-theme="dark"],
+html.dark {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] #root {
+  background-color: #0b1120 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .bg-slate-100 {
+  background-color: #0b1120 !important;
+}
+
+[data-theme="dark"] main {
+  background-color: #0b1120 !important;
+}
+
+[data-theme="dark"] header {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] aside {
+  background-color: #070b14 !important;
+  border-color: #1e293b !important;
+}
+
+/* Surfaces and Cards */
+[data-theme="dark"] .bg-white {
+  background-color: #131d31 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .bg-slate-50 {
+  background-color: #0f172a !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .border-slate-200,
+[data-theme="dark"] .border-slate-300 {
+  border-color: #223049 !important;
+}
+
+/* Typography */
+[data-theme="dark"] .text-slate-900,
+[data-theme="dark"] .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .text-slate-700,
+[data-theme="dark"] .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+/* Form Controls in Dark Mode */
+[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: #1a253c !important;
+  border-color: #2b3b58 !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] input:disabled,
+[data-theme="dark"] textarea:disabled,
+[data-theme="dark"] select:disabled {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #64748b !important;
+}
+
+/* Tables in Dark Mode */
+[data-theme="dark"] table th {
+  background-color: #162035 !important;
+  color: #94a3b8 !important;
+  border-color: #223049 !important;
+}
+
+[data-theme="dark"] table td {
+  border-color: #1c273e !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] table tr:hover td {
+  background-color: #18253e !important;
+}
+
+/* Dropdowns & Popovers */
+[data-theme="dark"] [role="listbox"],
+[data-theme="dark"] .shadow-lg {
+  background-color: #131d31 !important;
+  border-color: #2b3b58 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. COLORFUL MODE
+   -------------------------------------------------------------------------- */
+[data-theme="colorful"] body,
+[data-theme="colorful"] #root {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 25%, #e0e7ff 60%, #fae8ff 100%) !important;
+  color: #1e1b4b !important;
+}
+
+[data-theme="colorful"] main {
+  background: transparent !important;
+}
+
+[data-theme="colorful"] .bg-slate-100 {
+  background: transparent !important;
+}
+
+[data-theme="colorful"] header {
+  background: linear-gradient(90deg, #ffffff 0%, #faf5ff 100%) !important;
+  border-bottom: 2px solid #e9d5ff !important;
+  box-shadow: 0 4px 20px -2px rgba(168, 85, 247, 0.08) !important;
+}
+
+[data-theme="colorful"] aside {
+  background: linear-gradient(180deg, #1e1b4b 0%, #2e1065 50%, #172554 100%) !important;
+  border-color: #4338ca !important;
+}
+
+[data-theme="colorful"] .bg-white {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e9d5ff !important;
+  box-shadow: 0 4px 20px -3px rgba(147, 51, 234, 0.08) !important;
+}
+
+[data-theme="colorful"] .border-slate-200 {
+  border-color: #e0e7ff !important;
+}
+
+[data-theme="colorful"] .bg-blue-600 {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #c026d3 100%) !important;
+  border-color: transparent !important;
+}
+
+[data-theme="colorful"] .hover\:bg-blue-700:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 50%, #a21caf 100%) !important;
+}
+
+[data-theme="colorful"] table th {
+  background: linear-gradient(90deg, #f5f3ff 0%, #ede9fe 100%) !important;
+  color: #4c1d95 !important;
+  border-color: #ddd6fe !important;
+}
+
+[data-theme="colorful"] table tr:hover td {
+  background-color: #f5f3ff/80 !important;
+}
