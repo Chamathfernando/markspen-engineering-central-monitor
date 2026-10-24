@@ -49,7 +49,7 @@ export const SHEET_TECHNICIANS = 'Technicians';
 export const SHEET_MANAGERS = 'Managers';
 export const SHEET_VEHICLE_TYPES = 'Vehicle Types';
 export const SHEET_VEHICLES = 'Vehicles '; // Trailing space preserved!
-export const SHEET_SPARE_CATALOG = 'Spare parts';
+export const SHEET_SPARE_CATALOG = 'Spare Parts';
 
 // In-memory status & stats
 let lastReadTime: string | null = null;
