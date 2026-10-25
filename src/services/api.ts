@@ -13,16 +13,37 @@ import {
 } from '../types';
 
 async function handleResponse<T>(res: Response): Promise<T> {
+  const contentType = res.headers.get('content-type') || '';
   if (!res.ok) {
     let msg = `HTTP error ${res.status}`;
-    try {
-      const errObj = await res.json();
-      if (errObj && errObj.error) msg = errObj.error;
-    } catch {
-      // ignore json parse error
+    if (contentType.includes('application/json')) {
+      try {
+        const errObj = await res.json();
+        if (errObj && errObj.error) msg = errObj.error;
+      } catch {
+        // ignore json parse error
+      }
+    } else {
+      const text = await res.text();
+      if (text.includes('<!doctype') || text.includes('<html')) {
+        msg = `Server returned HTML page (${res.status}). API route might be missing or failing on server.`;
+      }
     }
     throw new Error(msg);
   }
+
+  if (!contentType.includes('application/json')) {
+    const text = await res.text();
+    if (text.includes('<!doctype') || text.includes('<html')) {
+      throw new Error(`Expected JSON response, but received HTML page (${res.status}). Ensure API route endpoint is correct.`);
+    }
+    try {
+      return JSON.parse(text) as T;
+    } catch {
+      throw new Error('Response body is not valid JSON.');
+    }
+  }
+
   return res.json();
 }
 

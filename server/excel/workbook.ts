@@ -208,10 +208,7 @@ export function syncReferenceDataSheets(wb: ExcelJS.Workbook): boolean {
   }
   const currentBranches: string[] = [];
   wsBranches.eachRow((r, i) => { if (i > 1) { const val = getCellString(r.getCell(1)); if (val) currentBranches.push(val); } });
-  if (JSON.stringify(currentBranches) !== JSON.stringify(DEFAULT_BRANCHES)) {
-    while (wsBranches.rowCount > 1) {
-      wsBranches.spliceRows(2, 1);
-    }
+  if (currentBranches.length === 0) {
     DEFAULT_BRANCHES.forEach(b => wsBranches!.addRow([b]));
     changed = true;
   }
@@ -224,10 +221,7 @@ export function syncReferenceDataSheets(wb: ExcelJS.Workbook): boolean {
   }
   const currentJobTypes: string[] = [];
   wsJobTypes.eachRow((r, i) => { if (i > 1) { const val = getCellString(r.getCell(1)); if (val) currentJobTypes.push(val); } });
-  if (JSON.stringify(currentJobTypes) !== JSON.stringify(DEFAULT_JOB_TYPES)) {
-    while (wsJobTypes.rowCount > 1) {
-      wsJobTypes.spliceRows(2, 1);
-    }
+  if (currentJobTypes.length === 0) {
     DEFAULT_JOB_TYPES.forEach(jt => wsJobTypes!.addRow([jt]));
     changed = true;
   }
@@ -240,10 +234,7 @@ export function syncReferenceDataSheets(wb: ExcelJS.Workbook): boolean {
   }
   const currentStatuses: string[] = [];
   wsStatus.eachRow((r, i) => { if (i > 1) { const val = getCellString(r.getCell(1)); if (val) currentStatuses.push(val); } });
-  if (JSON.stringify(currentStatuses) !== JSON.stringify(DEFAULT_STATUSES)) {
-    while (wsStatus.rowCount > 1) {
-      wsStatus.spliceRows(2, 1);
-    }
+  if (currentStatuses.length === 0) {
     DEFAULT_STATUSES.forEach(s => wsStatus!.addRow([s]));
     changed = true;
   }
